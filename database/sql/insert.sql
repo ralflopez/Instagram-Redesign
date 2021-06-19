@@ -1,10 +1,12 @@
 INSERT INTO users (
     username,
     email,
+    display_name,
     password
 ) VALUES (
     'test',
     'test@gmail.com',
+    'test account',
     'hashedpass'  
 );
 
