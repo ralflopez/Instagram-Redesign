@@ -12,6 +12,7 @@ CREATE TABLE users (
     id BIGSERIAL UNIQUE NOT NULL PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
     display_name VARCHAR(255),
+    photo_url VARCHAR(255) DEFAULT '',
     email VARCHAR(255) UNIQUE NOT NULL,
     password TEXT NOT NULL
 );
