@@ -1,0 +1,19 @@
+.loginBg {
+	background: linear-gradient(117.06deg, #e2306c 5.31%, #415ce7 177.88%);
+}
+
+.fullscreen {
+	min-height: 100vh;
+	width: 100%;
+}
+
+.loginCard {
+	min-height: 100vh;
+	width: 100%;
+	background-color: #fff;
+	@media (min-width: 768px) {
+		min-height: 600px;
+		max-width: 500px;
+		border-radius: 0.7rem;
+	}
+}

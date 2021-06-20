@@ -1,11 +1,14 @@
-import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Layout from '../components/Layouts/Layout'
+import { Provider as NextAuthProvider } from 'next-auth/client'
+import '../styles/bootstrap.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<Layout>
-			<Component {...pageProps} />
+			<NextAuthProvider session={pageProps.session}>
+				<Component {...pageProps} />
+			</NextAuthProvider>
 		</Layout>
 	)
 }
