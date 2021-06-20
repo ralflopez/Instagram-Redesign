@@ -18,5 +18,6 @@ export interface TUser {
     id: number,
     username: string,
     display_name: string,
-    email: string
+    email: string,
+    photo_url: string
 }
