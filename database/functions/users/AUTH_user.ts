@@ -3,7 +3,7 @@ import { pool } from "../../dbconfig"
 import { TSignInCredentials, TUser } from "../../types"
 import bcrpyt from 'bcrypt'
 
-export const AUTH_USER = async ({ username, password }: TSignInCredentials) => {
+export default async function AUTH_USER({ username, password }: TSignInCredentials) {
     let user: TUser | null = null
     try {
         const client = await pool.connect()

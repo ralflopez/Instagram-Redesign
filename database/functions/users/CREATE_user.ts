@@ -1,8 +1,8 @@
 import { pool } from "../../dbconfig";
 import { TSignUpCredentials } from "../../types";
-import { AUTH_USER } from "./AUTH_user";
+import { AUTH_USER } from './index'
 
-export const CREATE_USER = async (credentials: TSignUpCredentials) => {
+export default async function CREATE_USER(credentials: TSignUpCredentials) {
     try {
         const client = await pool.connect()
         const { username, email, displayName, hashedPass, password } = credentials

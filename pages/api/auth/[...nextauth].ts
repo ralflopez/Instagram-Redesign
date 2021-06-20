@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import NextAuth, { NextAuthOptions } from 'next-auth'
 import Providers from 'next-auth/providers'
-import { AUTH_USER } from '../../../database/functions/users/AUTH_user'
+import { AUTH_USER } from '../../../database/functions/users'
 import { TSignInCredentials } from '../../../database/types'
 const { Credentials } = Providers
 
@@ -24,6 +24,9 @@ const options: NextAuthOptions = {
         jwt: true,
         maxAge: 30 * 24 * 60 * 60,
     },
+    jwt: {
+        secret: process.env.JWT_SECRET,
+    },
     callbacks: {
         async signIn(user) {
             if (user) {
@@ -34,7 +37,7 @@ const options: NextAuthOptions = {
         },
         async redirect(_, baseUrl) {
             return baseUrl
-        }
+        },
     },
     pages: {
         signIn: '/auth/signin',

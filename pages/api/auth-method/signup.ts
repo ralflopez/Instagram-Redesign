@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { signUpSchema } from "../../../database/functions/users/schema";
 import joi from 'joi'
 import bcrypt from 'bcrypt'
-import { CREATE_USER } from "../../../database/functions/users/CREATE_user";
+import { CREATE_USER } from '../../../database/functions/users'
 
 // sign up route
 
