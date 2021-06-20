@@ -5,6 +5,7 @@ import { GetServerSideProps, GetServerSidePropsContext } from 'next'
 import logoSvg from '../../assets/icons/logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Session } from 'next-auth'
 
 interface Props {
 	error: boolean
@@ -98,7 +99,7 @@ export default function SignIn({ error }: Props) {
 export const getServerSideProps: GetServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
-	const token = await getSession(context)
+	const session: Session | null = await getSession(context)
 	const error: boolean = !!context.query.error
 
 	// redirect if token exist
@@ -106,6 +107,6 @@ export const getServerSideProps: GetServerSideProps = async (
 		props: {
 			error,
 		},
-		redirect: !!token ? { destination: '/', permanant: false } : undefined,
+		redirect: !!session ? { destination: '/', permanant: false } : undefined,
 	}
 }

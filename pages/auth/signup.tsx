@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { signIn, getSession } from 'next-auth/client'
 import { GetServerSideProps, GetServerSidePropsContext } from 'next'
+import { Session } from 'next-auth'
 import axios from 'axios'
 import Image from 'next/image'
 import styles from '../../styles/auth.module.scss'
@@ -132,11 +133,11 @@ export default function SignUp() {
 export const getServerSideProps: GetServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
-	const token = await getSession(context)
+	const session: Session | null = await getSession(context)
 
 	// redirect if token exist
 	return {
 		props: {},
-		redirect: !!token ? { destination: '/', permanant: false } : undefined,
+		redirect: !!session ? { destination: '/', permanant: false } : undefined,
 	}
 }
