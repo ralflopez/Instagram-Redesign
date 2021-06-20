@@ -2,5 +2,13 @@
     "singleQuote": true,
     "endOfLine": "lf",
     "semi": false,
-    "useTabs": true
+    "useTabs": true,
+    "overrides": [
+        {
+            "files": ["**/*.css", "**/*.scss", "**/*.html"],
+            "options": {
+                "singleQuote": false
+            }
+        }
+    ]
 }
