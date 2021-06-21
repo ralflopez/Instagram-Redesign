@@ -1,0 +1,25 @@
+@import "../customs/colors";
+
+.ring {
+	width: 88px;
+	height: 88px;
+	border-radius: 999px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imageContainer {
+	width: 75px;
+	height: 75px;
+	border-radius: 999px;
+	background-color: $primary;
+	border-radius: 999px;
+	position: absolute;
+	overflow: hidden;
+	object-fit: cover;
+}
+.story {
+	border: 3px solid;
+	border-image-source: linear-gradient(180deg, #e2306c 0%, #5951d8 100%);
+}
