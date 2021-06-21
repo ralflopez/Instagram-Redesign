@@ -1,0 +1,50 @@
+.fullscreen {
+	min-height: 100vh;
+	width: 100%;
+}
+
+.fill-container {
+	height: 100%;
+	width: 100%;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.font-weight-bold {
+	font-weight: 600;
+}
+
+// transition
+.transition-all {
+	transition-property: all;
+}
+
+.transition-250 {
+	transition-duration: 250ms;
+}
+
+.transition-ease-out {
+	transition-timing-function: ease-out;
+}
+
+.z--5 {
+	z-index: -5;
+}
+
+.z-0 {
+	z-index: 0;
+}
+
+.z-5 {
+	z-index: 5;
+}
+
+.text-gray {
+	color: #a2a2a2;
+}

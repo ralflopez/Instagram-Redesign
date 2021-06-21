@@ -1,0 +1,23 @@
+@import "../customs/colors";
+
+.icon {
+	fill: $black;
+}
+
+.icon:hover {
+	path {
+		fill: $primary;
+	}
+}
+
+.iconActive {
+	fill: $primary;
+}
+
+.title {
+	color: $black;
+}
+
+.titleActive {
+	color: $primary;
+}
