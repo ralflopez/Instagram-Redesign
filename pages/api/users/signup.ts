@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { signUpSchema } from "../../../database/functions/users/schema";
+import { signUpSchema } from "../../../lib/pg/functions/users/schema";
 import joi from 'joi'
 import bcrypt from 'bcrypt'
-import { CREATE_USER } from '../../../database/functions/users'
+import { CREATE_USER } from '../../../lib/pg/functions/users'
 
 // sign up route
 

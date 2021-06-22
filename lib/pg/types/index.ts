@@ -19,5 +19,7 @@ export interface TUser {
     username: string,
     display_name: string,
     email: string,
-    photo_url: string
+    photo_url: string,
+    followers?: number,
+    following?: number
 }

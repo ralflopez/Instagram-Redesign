@@ -17,6 +17,13 @@ CREATE TABLE users (
     password TEXT NOT NULL
 );
 
+CREATE TABLE follows (
+    from_user BIGINT NOT NULL,
+    FOREIGN KEY(from_user) REFERENCES users(id),
+    to_user BIGINT NOT NULL,
+    FOREIGN KEY(to_user) REFERENCES users(id)
+);
+
 CREATE TABLE stories (
     id SERIAL UNIQUE NOT NULL PRIMARY KEY,
     user_id BIGINT NOT NULL,

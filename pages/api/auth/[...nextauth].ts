@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import NextAuth, { NextAuthOptions } from 'next-auth'
 import Providers from 'next-auth/providers'
-import { AUTH_USER } from '../../../database/functions/users'
-import { TSignInCredentials } from '../../../database/types'
+import { AUTH_USER } from '../../../lib/pg/functions/users'
+import { TSignInCredentials } from '../../../lib/pg/types'
 const { Credentials } = Providers
 
 const credentialsProvider = Credentials({
