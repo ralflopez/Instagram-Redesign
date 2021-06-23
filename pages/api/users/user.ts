@@ -6,23 +6,28 @@ import { GET_USER } from '../../../lib/pg/functions/users'
 
 const route: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
-        console.log('route')
         const { email } = req.query
-        console.log(email)
         const client: PoolClient = await pool.connect()
         const query = await client.query(`
-            SELECT id, email, photo_url, display_name, COUNT(from_user.from_user) AS following
-            FROM users 
-            JOIN follows AS from_user ON users.id = from_user.from_user 
-            WHERE users.email = 'first@gmail.com'
-            GROUP BY from_user.from_user;`,
+            SELECT id, users.username, users.email, users.photo_url, users.display_name,
+            a.followers, b.following 
+            FROM (
+                SELECT follows.to_user, COUNT(follows.from_user) AS followers 
+                FROM follows
+                GROUP BY follows.to_user
+            ) a 
+            INNER JOIN users 
+            ON a.to_user = users.id
+            INNER JOIN (
+                SELECT follows.from_user, COUNT(follows.to_user) AS following
+                FROM follows
+                GROUP BY follows.from_user
+            ) b 
+            ON b.from_user = users.id
+            where email = $1;`,
             [email]
         )
-        console.log('query')
-        console.log(query.rows)
         const data = query.rows[0]
-        console.log('data')
-        console.log(data)
         client.release()
         res.status(200).send(data)
     } catch(err) {

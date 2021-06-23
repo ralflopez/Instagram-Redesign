@@ -12,16 +12,12 @@ interface Props {
 const NavIcon = ({ active, iconPath, title, link = '#' }: Props) => {
 	const [isActive, setAcitve] = useState<boolean>(active)
 
-	const handleHover = () => {
-		setAcitve((cur: boolean) => !cur)
-	}
-
 	return (
 		<Link href={link}>
 			<a
 				className="d-flex justify-content-start align-items-center cursor-pointer transition-all transition-350 transition-ease-out mb-4 w-100 mx-auto px-4 text-decoration-none"
-				onMouseEnter={handleHover}
-				onMouseLeave={handleHover}
+				onMouseEnter={() => setAcitve(true)}
+				onMouseLeave={() => setAcitve(active)}
 			>
 				<svg
 					width="25"

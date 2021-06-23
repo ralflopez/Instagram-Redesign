@@ -47,7 +47,7 @@ const initialState: { loading: boolean, error: any, data: TUser } = {
 }
 
 export const getUser: any = createAsyncThunk('users/getUser', async (email) => {
-    return axios.get(`/api/users/user?email=${email}`).then((res: AxiosResponse) => res.data)
+    return axios.get(`${process.env.NEXTAUTH_URL}/api/users/user?email=${email}`).then((res: AxiosResponse) => res.data).catch((err) => console.log(err))
 })
 
 const userSlice = createSlice({

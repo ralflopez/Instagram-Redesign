@@ -14,9 +14,6 @@ const initStore = (preloadedState: any = {}) => configureStore({
   //   return getDefaultMiddleware()
   //   .concat(userSlice.middleware)
   // }
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(
-    
-  )
 })
 
 export const initializeStore = (preloadedState: {} | void) => {
