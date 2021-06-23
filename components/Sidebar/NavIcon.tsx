@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react'
+import React, { useState } from 'react'
 import styles from '../../styles/sidebar/navicon.module.scss'
 import Link from 'next/link'
 

@@ -4,11 +4,13 @@ import NavIcon from './NavIcon'
 import Heading from './Heading'
 import { useAppSelector } from '../../app/hooks'
 import { NextRouter, useRouter } from 'next/dist/client/router'
+import { RootState } from '../../app/store'
+import { TUser } from '../../lib/pg/types'
 
 const Parent = () => {
 	const { route: active }: NextRouter = useRouter()
 
-	const user = useAppSelector((state: any) => state.user.data)
+	const user: TUser = useAppSelector((state: RootState) => state.user.data)
 
 	return (
 		<div

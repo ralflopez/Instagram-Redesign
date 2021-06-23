@@ -58,5 +58,5 @@ export function removeUndefined(state: any): any {
   return state
 }
 
-export type AppDispatch = ReturnType<typeof initStore>['dispatch']
-export type RootState = ReturnType<typeof initStore>['getState']
+export type AppDispatch = ReturnType<ReturnType<typeof initStore>['dispatch']>
+export type RootState = ReturnType<ReturnType<typeof initStore>['getState']>
