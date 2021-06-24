@@ -1,0 +1,71 @@
+.fullscreen {
+	height: 100vh;
+	width: 100%;
+}
+
+.full-height {
+	height: 100vh;
+}
+
+.fill-container {
+	height: 100%;
+	width: 100%;
+}
+
+.position-md-static {
+	@include media-breakpoint-up(md) {
+		position: static !important;
+	}
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.font-weight-bold {
+	font-weight: 600;
+}
+
+// transition
+.transition-all {
+	transition-property: all;
+}
+
+.transition-250 {
+	transition-duration: 250ms;
+}
+
+.transition-ease-out {
+	transition-timing-function: ease-out;
+}
+
+.text-gray {
+	color: #a2a2a2;
+}
+
+.bg-gradient-1 {
+	background: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
+}
+
+.btn-primary {
+	color: white;
+	border: none;
+	background: radial-gradient(
+		100% 4244.77% at 0% 100%,
+		#fdf497 3.58%,
+		#fd5949 35.72%,
+		#e2306c 65.53%,
+		#285aeb 100%
+	);
+}

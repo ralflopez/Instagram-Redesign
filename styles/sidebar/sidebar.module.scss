@@ -1,0 +1,17 @@
+@import "../customs/breakpoints";
+
+.h-100vh {
+	height: 100vh;
+}
+
+.parent {
+	position: absolute;
+	z-index: 10;
+	@media (min-width: $md) {
+		position: relative;
+	}
+}
+
+.ring {
+	position: absolute;
+}
