@@ -6,6 +6,7 @@ import { useAppSelector } from '../../app/hooks'
 import { NextRouter, useRouter } from 'next/dist/client/router'
 import { RootState } from '../../app/store'
 import { TUser } from '../../lib/pg/types'
+import styles from '../../styles/sidebar/sidebar.module.scss'
 
 const Parent = () => {
 	const { route: active }: NextRouter = useRouter()
@@ -14,8 +15,7 @@ const Parent = () => {
 
 	return (
 		<div
-			className="bg-white fill-container d-flex flex-column p-4"
-			style={{ maxHeight: '100vh' }}
+			className={`shadow-sm fill-container d-flex flex-column p-4 left-0 right-0 top-0 bottom-0 overflow-auto bg-white ${styles.parent}`}
 		>
 			<Heading />
 			<div className="d-flex flex-column align-items-center mb-4">

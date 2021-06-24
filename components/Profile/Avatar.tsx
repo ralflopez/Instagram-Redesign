@@ -4,60 +4,63 @@ import Image from 'next/image'
 
 interface Props {
 	photo: string
+	size?: string
 }
 
-const Avatar = ({ photo }: Props) => {
+const sizes: { [index: string]: number } = {
+	sm: 40,
+	md: 70,
+}
+
+const Avatar = ({ photo, size = 'md' }: Props) => {
+	const s: number = sizes[size]
+
 	const [hasStory, setHasStpry] = useState<boolean>(true)
 
 	return (
-		<div className={`${styles.ring} position-relative cursor-pointer`}>
-			<div className={`${styles.imageContainer} position-absolute z-0`}>
+		<div
+			className="text-center position-relative d-flex justify-content-center align-items-center cursor-pointer"
+			style={{ width: `${s}px`, height: `${s}px` }}
+		>
+			<div
+				className={`${styles.imageParent}`}
+				style={{ width: `${s - s / 7}px`, height: `${s - s / 7}px` }}
+			>
 				<Image
+					src={photo ? photo : '/fill-primary.png'}
 					layout="fill"
-					src={photo || '/fill-primary.png'}
-					alt="profile"
-					className="z-0"
+					alt="avatar"
+					className={`${styles.image}`}
 				/>
 			</div>
 			<svg
-				className="position-absolute z-0 d-flex justify-content-center align-items-center"
-				width="88"
-				height="88"
-				viewBox="0 0 87 86"
+				width={s}
+				height={s}
+				viewBox="0 0 260 260"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
+				style={{ position: 'absolute' }}
 			>
-				{hasStory ? (
-					<circle
-						cx="43.5348"
-						cy="43.0321"
-						r="41.144"
-						stroke="url(#paint0_linear)"
-						strokeWidth="3"
-					/>
-				) : (
-					<>
-						<circle
-							cx="43.5348"
-							cy="43.0321"
-							r="42.144"
-							stroke="url(#paint0_linear)"
-						/>
-						<circle cx="43.5348" cy="43.0321" r="42.144" stroke="#B7B7B7" />
-					</>
-				)}
-
-				<defs>
+				<circle
+					cx="50%"
+					cy="50%"
+					r="125"
+					stroke={hasStory ? 'url(#paint0_linear)' : '#a2a2a2'}
+					strokeWidth="8"
+				/>
+				<defs fill="red">
 					<linearGradient
 						id="paint0_linear"
-						x1="43.5348"
-						y1="0.388077"
-						x2="43.5348"
-						y2="85.6761"
+						x1="207.406"
+						y1="24.7961"
+						x2="40.1698"
+						y2="230.866"
 						gradientUnits="userSpaceOnUse"
 					>
-						<stop stopColor="#E2306C" />
-						<stop offset="1" stopColor="#5951D8" />
+						<stop stopColor="#FDF497" />
+						<stop offset="0.330551" stopColor="#FD5949" />
+						<stop offset="0.766479" stopColor="#D6249F" />
+						<stop offset="1" stopColor="#285AEB" />
 					</linearGradient>
 				</defs>
 			</svg>

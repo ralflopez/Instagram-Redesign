@@ -9,7 +9,13 @@ const Heading = () => {
 		<div className="d-flex justify-content-between align-items-center pt-2 pb-2 mb-4">
 			<Link href="/">
 				<a>
-					<Image src={logoSvg} height={50} alt="logo" />
+					<Image
+						src={logoSvg}
+						width={120}
+						height={50}
+						alt="logo"
+						quality={100}
+					/>
 				</a>
 			</Link>
 			<svg
