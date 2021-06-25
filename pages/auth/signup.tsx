@@ -56,7 +56,7 @@ export default function SignUp() {
 
 	return (
 		<div
-			className={`${styles.loginBg} ${styles.fullscreen} d-flex justify-content-center align-items-center p-md-5`}
+			className={`${styles.fullscreen} bg-gradient-1 d-flex justify-content-center align-items-center p-md-5`}
 		>
 			<div className={`${styles.loginCard} bg-white d-flex flex-column p-5`}>
 				<div className="mb-4 d-flex justify-content-between align-items-center mt-3">

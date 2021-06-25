@@ -5,14 +5,14 @@ import { getUser } from '../features/userSlice'
 import { initializeStore, removeUndefined } from '../app/store'
 import { getSessionEmail } from '../lib/next-auth/getSessionEmail'
 import { TUser } from '../lib/pg/types'
-import StorySection from '../components/Home/Stories/Stories'
-import FeedSection from '../components/Home/Feed/Feed'
+import LikesPage from '../components/Likes/Likes'
+
 interface Props {
 	initialReduxState: any
 	user: TUser
 }
 
-export default function Home({ initialReduxState }: Props) {
+export default function Likes({ initialReduxState }: Props) {
 	return (
 		<main className="container-fluid p-0">
 			<div className="row fullscreen m-0 position-relative">
@@ -20,9 +20,8 @@ export default function Home({ initialReduxState }: Props) {
 					<Sidebar />
 				</div>
 				<div className="full-height col-md-9 mx-auto overflow-auto">
-					<div className="mx-auto" style={{ width: '70%' }}>
-						<StorySection />
-						<FeedSection />
+					<div className="mx-auto" style={{ width: '80%' }}>
+						<LikesPage />
 					</div>
 				</div>
 			</div>
